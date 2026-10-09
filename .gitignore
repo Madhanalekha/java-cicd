@@ -1,0 +1,5 @@
+@"
+target/
+.idea/
+*.iml
+"@ | Set-Content .gitignore
