@@ -1,0 +1,14 @@
+
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: java-cicd-job
+spec:
+  backoffLimit: 0
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: java-cicd
+          image: Madhanalekha26/java-cicd:1.0
+          imagePullPolicy: Always

@@ -1,3 +1,12 @@
+
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@SpringBootApplication
+@RestController
 public class App {
 
     public static int add(int a, int b) {
@@ -5,7 +14,11 @@ public class App {
     }
 
     public static void main(String[] args) {
-        System.out.println("Java CI/CD Application");
-        System.out.println("2 + 3 = " + add(2, 3));
+        SpringApplication.run(App.class, args);
+    }
+
+    @GetMapping("/")
+    public String home() {
+        return "Java CI/CD Application<br>2 + 3 = " + add(2, 3);
     }
 }
